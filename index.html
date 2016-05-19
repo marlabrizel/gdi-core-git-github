@@ -254,7 +254,8 @@ $ git config --list
             <p>How is this all different than just saving a file?</p>
             <ul>
               <li class="fragment">When we <span class="green">add</span> a new file, we tell Git to add the file to the repository to be tracked</li>
-              <li class="fragment">When we <span class="green">stage</span> an existing file (also with the keyword 'add'), we are telling Git to track the current state of our file</li>
+              <li class="fragment">When we <span class="green">stage</span> an existing file, we are telling Git to track the current state of our file</li>
+              <li class="fragment">Note that the keyword <span class="green">add</span> both adds and stages our file for us in the same step.</li>
               <li class="fragment">A <span class="green">commit</span> saves changes made to a file, not the file as a whole. The commit will have a 'hash' so we can track which changes were committed when and by whom.</li>
 
             </ul>
@@ -271,13 +272,6 @@ $ git config --list
 
       First commit. Added hello world to repository.
               </code></pre>
-          </section>
-          <section>
-            <h3>Look at our progress, visually</h3>
-            <pre><code contenteditable class="command-line">
-  gitk
-            </code></pre>
-            <img src="images/gitk.png" alt="Image of commits for this curriculum repo"/>
           </section>
         </section>
         <!-- Undoing changes -->
@@ -349,21 +343,21 @@ git rm my_other_file.txt
           <section>
             <h3>Branching</h3>
             <ul>
-              <li>Develop different code on the same base</li>
-              <li>Conduct exploratory work without affecting the work on master branch</li>
-              <li>Incorporate changes to your master branch only when you are ready</li>
+              <li class="fragment">Cleanly work on different parts of the same codebase</li>
+              <li class="fragment">Conduct exploratory work without affecting the work on master branch</li>
+              <li class="fragment">Incorporate changes to your master branch only when you are ready</li>
             </ul>
           </section>
           <section>
             <h3>Branching</h3>
-            <p>Create a new branch called version2</p>
+            <p>Create a new branch called new-feature</p>
             <pre><code contenteditable class="command-line">
-git checkout -b version2
+git checkout -b new-feature
             </code></pre>
             <p>Add new lines to hello_world.txt</p>
             <pre><code contenteditable class="command-line">
 git add hello_world.txt
-git commit -m "Adding changes to version 2"
+git commit -m "Adding changes to new feature"
             </code></pre>
           </section>
           <section>
@@ -377,9 +371,9 @@ git branch
             <pre><code contenteditable class="command-line">
 git checkout master
             </code></pre>
-            <p>Switch to version2 and look at hello_world.txt</p>
+            <p>Switch to new-feature and look at hello_world.txt</p>
             <pre><code contenteditable class="command-line">
-git checkout version2
+git checkout new-feature
             </code></pre>
           </section>
         </section>
@@ -391,7 +385,7 @@ git checkout version2
             <p>Switch to master and merge changes</p>
             <pre><code contenteditable class="command-line">
 git checkout master
-git merge version2
+git merge new-feature
             </code></pre>
             <p>*rebase is another option, but will not be covered in this workshop</p>
           </section>
@@ -403,18 +397,18 @@ git merge version2
 git add hello_world.txt
 git commit -m "Changing first line in master"
             </code></pre>
-            <p>Change first line in hello_world.txt in version2 branch</p>
+            <p>Change first line in hello_world.txt in new-feature branch</p>
             <pre><code contenteditable class="command-line">
-git checkout version2
+git checkout new-feature
 # open hello_world.txt and change first line
 git add hello_world.txt
-git commit -m "Changing first line in version2"
+git commit -m "Changing first line in new-feature"
             </code></pre>
           </section>
           <section>
             <h3>Merging</h3>
-            <h4>Merge conflicts, cont.</h4>
-            <p>Merge from master into version2</p>
+            <h4>Merge conflicts, continued</h4>
+            <p>Merge from master into new-feature</p>
             <pre><code contenteditable class="command-line">
 git merge master
             </code></pre>
