@@ -136,7 +136,7 @@
           <!-- Git-->
           <section>
             <h3>Intro to Git</h3>
-            <p>Goals of Git Design</p>
+            <p>Goals of Git</p>
             <ul>
               <li>Fast -- add to your team and code base quickly</li>
               <li>Distributed (see slide above)</li>
@@ -279,11 +279,12 @@ $ git config --list
           <section>
             <h3>Nobody's Perfect</h3>
             <h4>Undoing local changes</h4>
-            <p>If you haven't committed yet</p>
+            <h6>If you haven't committed yet</h6>
             <div class="fragment">
               <p>Open hello_world.txt and add some new text</p>
+            </div>
+            <div class="fragment">
               <pre><code contenteditable class="command-line">
-  change hello_world.txt
   git checkout hello_world.txt
               </code></pre>
             </div>
@@ -294,6 +295,8 @@ $ git config --list
             <h4>Undoing staged changes</h4>
             <div class="fragment">
               <p>Open hello_world.txt and add some new text</p>
+            </div>
+            <div class="fragment">
               <pre><code contenteditable class="command-line">
 git add hello_world.txt
 git reset HEAD hello_world.txt
@@ -307,6 +310,8 @@ git checkout hello_world.txt
             <h4>Undoing staged changes</h4>
             <div class="fragment">
               <p>Open hello_world.txt and add some new text</p>
+            </div>
+            <div class="fragment">
               <pre><code contenteditable class="command-line">
 git add hello_world.txt
 git commit -am "Changing and committing some lines"
@@ -319,23 +324,35 @@ git revert [HASH]
           <section>
             <h3>Nobody's Perfect</h3>
             <h4>Remove a file from staging</h4>
-            <p>Create new file my_new_file.txt</p>
-            <pre><code contenteditable class ="command-line">
+            <div class="fragment">
+              <p>Create new file my_new_file.txt</p>
+            </div>
+            <div class="fragment">
+             <pre><code contenteditable class ="command-line">
 git add my_new_file.txt
 git reset my_new_file.txt
               </code></pre>
+            </div>
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
             <h4>Delete a file</h4>
-            <p>Create new file my_other_file.txt</p>
-            <pre><code contenteditable class="command-line">
+            <div class="fragment">
+              <p>Create new file my_other_file.txt</p>
+            </div>
+            <div class="fragment">
+              <pre><code contenteditable class="command-line">
 git add my_other_file.txt
-            </code></pre>
-            <p>Manually delete your file</p>
-            <pre><code contenteditable class="command-line">
+              </code></pre>
+            </div>
+            <div class="fragment">
+              <p>Manually delete your file</p>
+            </div>
+            <div class="fragment">
+              <pre><code contenteditable class="command-line">
 git rm my_other_file.txt
-            </code></pre>
+              </code></pre>
+            </div>
           </section>
         </section>
         <!-- Branches-->
